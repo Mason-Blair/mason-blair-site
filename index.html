@@ -6,14 +6,52 @@
   <title>Mason Blair | Bookkeeping, Payroll &amp; Tax Returns for UK Small Businesses</title>
   <meta name="description" content="Friendly, straightforward bookkeeping, payroll and tax returns for UK sole traders and small businesses. Clear numbers, clear advice.">
   <link rel="canonical" href="https://www.mason-blair.com/">
-  <meta property="og:title" content="Mason Blair Accountancy Services">
-  <meta property="og:description" content="Straightforward accounting for UK sole traders and small businesses.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2314213d'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='26' font-weight='700' text-anchor='middle' fill='%23b8923a'%3EMB%3C/text%3E%3C/svg%3E">
+  <meta property="og:title" content="Mason Blair | Bookkeeping, Payroll &amp; Tax Returns for UK Small Businesses">
+  <meta property="og:description" content="Friendly, straightforward bookkeeping, payroll and tax returns for UK sole traders and small businesses.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.mason-blair.com/">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="style.css">
+
+  <!-- Small overrides and additions. These can be moved into style.css if you prefer. -->
+  <style>
+    /* Button text: navy on gold passes WCAG AA contrast (white on gold did not) */
+    .btn-primary { color: var(--navy); }
+    .btn-primary:hover, .nav a.btn-primary:hover { background: var(--gold-dark); color: #fff; }
+
+    /* Seasonal notice bar */
+    .notice { background: var(--cream); border-bottom: 1px solid var(--line); text-align: center; padding: 10px 20px; font-size: 0.95rem; color: var(--navy); }
+    .notice a { font-weight: 600; color: var(--navy); }
+    .notice a:hover { color: var(--gold-dark); }
+
+    /* Contact form feedback */
+    .form-status { margin: 14px 0 0; font-weight: 600; }
+    .form-status:empty { display: none; }
+    .form-status.ok { color: #1f6b3a; }
+    .form-status.error { color: #a12b2b; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AccountingService",
+    "name": "Mason Blair Accountancy Services",
+    "url": "https://www.mason-blair.com/",
+    "email": "info@mason-blair.com",
+    "description": "Bookkeeping, payroll and tax returns for UK sole traders and small businesses.",
+    "areaServed": { "@type": "Country", "name": "United Kingdom" }
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Seasonal notice: hides itself automatically after 31 January 2027. Delete the block and its script when no longer needed. -->
+  <div class="notice" id="notice">
+    Self Assessment deadline: <strong>31 January 2027</strong>. Get in touch early to give yourself plenty of time. <a href="#contact">Book a chat</a>
+  </div>
 
   <header class="site-header">
     <div class="container header-inner">
@@ -46,11 +84,11 @@
           <p class="lead">Straightforward bookkeeping, payroll and tax returns, explained in plain English, so you can get on with running your business.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contact">Discuss your accounting needs</a>
-            <a class="btn btn-outline" href="#services">See our services</a>
+            <a class="btn btn-outline" href="#services">See my services</a>
           </div>
         </div>
         <aside class="hero-card" aria-label="Why choose us">
-          <h2>Why clients choose us</h2>
+          <h2>Why clients choose me</h2>
           <ul>
             <li>Clear, fixed pricing with no surprises</li>
             <li>Jargon-free advice you can act on</li>
@@ -65,7 +103,7 @@
     <section id="services">
       <div class="container">
         <div class="section-head">
-          <h2>What we offer</h2>
+          <h2>What I offer</h2>
           <p>Three core services, designed for sole traders and growing small businesses.</p>
         </div>
         <div class="cards">
@@ -78,7 +116,7 @@
               <li>Bank reconciliations</li>
               <li>Monthly financial reports</li>
             </ul>
-            <a class="btn btn-outline" href="#contact">Enquire</a>
+            <a class="btn btn-outline" href="#contact" data-service="Bookkeeping">Enquire</a>
           </article>
 
           <article class="card">
@@ -90,19 +128,19 @@
               <li>Auto-enrolment pensions</li>
               <li>RTI submissions and year-end reporting</li>
             </ul>
-            <a class="btn btn-outline" href="#contact">Enquire</a>
+            <a class="btn btn-outline" href="#contact" data-service="Payroll">Enquire</a>
           </article>
 
           <article class="card">
             <h3>Tax returns</h3>
-            <p class="price">From £250</p>
+            <p class="price">From £250 per return</p>
             <p>Accurate tax returns tailored to sole traders and small businesses.</p>
             <ul>
               <li>Self Assessment and VAT returns</li>
               <li>HMRC correspondence</li>
-              <li>Tax planning to claim every allowable deduction</li>
+              <li>Tax planning to claim the allowable deductions you're entitled to</li>
             </ul>
-            <a class="btn btn-outline" href="#contact">Enquire</a>
+            <a class="btn btn-outline" href="#contact" data-service="Tax return">Enquire</a>
           </article>
         </div>
         <p class="note">Prices shown are starting prices. Get in touch for a clear, fixed quote based on your business.</p>
@@ -113,21 +151,21 @@
     <section id="how" class="section-alt">
       <div class="container">
         <div class="section-head">
-          <h2>More than just reports</h2>
-          <p>Financial clarity should feel empowering, not intimidating. We pair smart technology with friendly guidance.</p>
+          <h2>How it works</h2>
+          <p>Financial clarity should feel empowering, not intimidating. Getting started is simple, and I'll keep everything in plain English.</p>
         </div>
         <div class="steps">
           <div class="step">
             <h3>Say hello</h3>
-            <p>Tell us about your business and what you need help with. No obligation.</p>
+            <p>Tell me about your business and what you need help with. No obligation.</p>
           </div>
           <div class="step">
             <h3>Get a clear quote</h3>
-            <p>We confirm exactly what's included and what it costs, in writing.</p>
+            <p>I confirm exactly what's included and what it costs, in writing.</p>
           </div>
           <div class="step">
-            <h3>We take it from here</h3>
-            <p>We handle the numbers and deadlines, and keep you informed in plain English.</p>
+            <h3>I take it from here</h3>
+            <p>I handle the numbers and deadlines, and keep you informed in plain English.</p>
           </div>
         </div>
       </div>
@@ -137,13 +175,13 @@
     <section id="about">
       <div class="container about-grid">
         <div class="about-photo">
-         <img src="headshot.jpg" alt="Photo of Mason, founder of Mason Blair Accountancy Services">
+          <img src="headshot.jpg" alt="Photo of Mason, founder of Mason Blair Accountancy Services" loading="lazy" decoding="async">
         </div>
         <div class="about-text">
           <h2>Meet your accountant</h2>
           <p>Hello, I'm Mason. I started Mason Blair Accountancy Services to give sole traders and small business owners accounting support that is friendly, affordable and easy to understand.</p>
-          <p>With around 15 years of experience in accountancy, I’ve seen first-hand how much difference clear, dependable financial support can make to a business. I set up my own practice to give sole traders and small to medium-sized businesses the kind of personal attention that’s often hard to find: someone who knows your numbers, picks up the phone, and explains things in plain English.</p>
-	  <p>I most enjoy working with people who are building something of their own, whether you’re a sole trader getting to grips with your first tax return or a growing business that needs steady, reliable guidance. My aim is to take the stress out of the figures so you can spend your time doing what you do best.</p>
+          <p>With around 15 years of experience in accountancy, I've seen first-hand how much difference clear, dependable financial support can make to a business. I set up my own practice to give sole traders and small to medium-sized businesses the kind of personal attention that's often hard to find: someone who knows your numbers, answers your questions, and explains things in plain English.</p>
+          <p>I most enjoy working with people who are building something of their own, whether you're a sole trader getting to grips with your first tax return or a growing business that needs steady, reliable guidance. My aim is to take the stress out of the figures so you can spend your time doing what you do best.</p>
           <ul class="credentials" aria-label="Qualifications and memberships">
             <li>Qualifications: BSc (Hons) Accountancy and Finance, AAT level 4</li>
             <li>Professional body: Association of Accounting Technicians</li>
@@ -174,23 +212,31 @@
         <div class="faq">
           <details>
             <summary>Do I need an accountant as a sole trader?</summary>
-            <p>You don't have to have one, but many sole traders find it saves time, reduces mistakes and helps them keep more of what they earn. We can help with as much or as little as you need.</p>
+            <p>You don't have to have one, but many sole traders find it saves time, reduces mistakes and helps them keep more of what they earn. I can help with as much or as little as you need.</p>
           </details>
           <details>
             <summary>When is my Self Assessment tax return due?</summary>
             <p>For most people the online filing deadline is 31 January following the end of the tax year (which ends 5 April), and any tax owed is also due by then. Check GOV.UK for the current year's exact dates.</p>
           </details>
           <details>
+            <summary>What is Making Tax Digital for Income Tax?</summary>
+            <p>It's a change to how some sole traders and landlords keep records and report to HMRC, being phased in by income level. If it applies to you, you'll need to keep digital records and send regular updates using compatible software. Check GOV.UK to see whether and when it applies to you, and get in touch if you'd like help getting ready.</p>
+          </details>
+          <details>
             <summary>What do I need to send you?</summary>
-            <p>Typically your income and expense records (or bank statements), plus any relevant invoices and receipts. We'll give you a simple checklist once we've spoken.</p>
+            <p>Typically your income and expense records (or bank statements), plus any relevant invoices and receipts. I'll give you a simple checklist once we've spoken.</p>
+          </details>
+          <details>
+            <summary>Can you take over from my current accountant?</summary>
+            <p>Yes. Get in touch and I'll explain what's needed to make the switch smooth.</p>
           </details>
           <details>
             <summary>How much will it cost?</summary>
-            <p>Our prices start from the amounts shown above. We'll agree a clear, fixed quote with you before any work begins.</p>
+            <p>My prices start from the amounts shown above. I'll agree a clear, fixed quote with you before any work begins.</p>
           </details>
           <details>
             <summary>How do we communicate?</summary>
-            <p>Mainly by email, with calls when you'd like to talk things through. We aim to reply within one working day.</p>
+            <p>Mainly by email, with calls when you'd like to talk things through. I aim to reply within one working day.</p>
           </details>
         </div>
       </div>
@@ -201,14 +247,13 @@
       <div class="container contact-grid">
         <div>
           <h2>Have a question?</h2>
-          <p>Send us a quick note and let's figure it out together. We aim to reply within one working day.</p>
+          <p>Send me a quick note and let's figure it out together. I aim to reply within one working day.</p>
           <ul class="contact-list">
             <li><strong>Email:</strong> <a href="mailto:info@mason-blair.com">info@mason-blair.com</a></li>
-            <!-- <li><strong>Phone:</strong> <a href="tel:07827 689 279">07827 689 279</a></li> -->
           </ul>
         </div>
 
-        <form action="https://formspree.io/f/moedjldq" method="POST">
+        <form id="contact-form" action="https://formspree.io/f/moedjldq" method="POST">
           <div class="field">
             <label for="name">Your name</label>
             <input id="name" name="name" type="text" autocomplete="name" required>
@@ -239,6 +284,7 @@
             <label for="consent" style="font-weight:400;margin:0;">I agree to my details being used to reply to my enquiry, as described in the <a href="privacy.html">privacy policy</a>.</label>
           </div>
           <button class="btn btn-primary" type="submit">Send message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -271,8 +317,52 @@
         toggle.setAttribute('aria-expanded', 'false');
       });
     });
+
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Hide the Self Assessment notice after the deadline has passed
+    var notice = document.getElementById('notice');
+    if (notice && new Date() >= new Date('2027-02-01')) {
+      notice.style.display = 'none';
+    }
+
+    // "Enquire" buttons pre-select the matching service in the form
+    var serviceSelect = document.getElementById('service');
+    document.querySelectorAll('[data-service]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        serviceSelect.value = btn.getAttribute('data-service');
+      });
+    });
+
+    // Send the form without leaving the page (falls back to a normal submit if this fails to run)
+    var form = document.getElementById('contact-form');
+    var statusEl = document.getElementById('form-status');
+    form.addEventListener('submit', function (e) {
+      if (!window.fetch || !window.FormData) { return; }
+      e.preventDefault();
+      var submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      statusEl.className = 'form-status';
+      statusEl.textContent = '';
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (response) {
+        if (!response.ok) { throw new Error('Request failed'); }
+        form.reset();
+        statusEl.classList.add('ok');
+        statusEl.textContent = 'Thank you, your message has been sent. I aim to reply within one working day.';
+      }).catch(function () {
+        statusEl.classList.add('error');
+        statusEl.textContent = 'Sorry, something went wrong. Please email info@mason-blair.com instead.';
+      }).then(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send message';
+      });
+    });
   </script>
 </body>
 </html>
